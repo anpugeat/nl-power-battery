@@ -1,11 +1,11 @@
-# ---- Secrets ----
+# --- Secrets ---
 .env
 .env.*
 !.env.example
 *.pem
 *.key
 
-# ---- Python ----
+# --- Python ---
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -14,7 +14,7 @@ dist/
 .venv/
 venv/
 
-# ---- Test and notebook caches ----
+# --- Test and notebook caches ---
 .pytest_cache/
 .coverage
 htmlcov/
@@ -22,40 +22,40 @@ htmlcov/
 .ruff_cache/
 .ipynb_checkpoints/
 
-# ---- Raw data: pulled from ENTSO-E and Open-Meteo, rebuilt by the ingest scripts ----
+# --- Raw data: pulled from ENTSO-E and Open-Meteo, rebuilt by the ingest scripts ---
 /data/
 
-# ---- Trained models and scratch output ----
+# --- Trained models and scratch output ---
 /artifacts/
 *.pkl
 *.joblib
 /reports/scratch/
 
-# ---- Third-party code cloned into the project (epftoolbox) ----
+# --- Third-party code cloned into the project (epftoolbox) ---
 /epftoolbox/
 
-# ---- Database dumps and local database files ----
+# --- Database dumps and local database files ---
 /backup*.sql
 *.sql.gz
 *.dump
 /pgdata/
 
-# ---- Logs ----
+# --- Logs ---
 *.log
 /logs/
 
-# ---- Airflow ----
+# --- Airflow ---
 /airflow/logs/
 airflow.db
 airflow-webserver.pid
 
-# ---- Editors and operating systems ----
+# --- Editors and operating systems ---
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# ---- Live data ----
+# --- Live data ---
 !/live/
 !/live/*.csv
