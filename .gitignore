@@ -31,7 +31,7 @@ htmlcov/
 *.joblib
 /reports/scratch/
 
-# ---- Third-party code cloned into the project (epftoolbox, Step 1 of the action plan) ----
+# ---- Third-party code cloned into the project (epftoolbox) ----
 /epftoolbox/
 
 # ---- Database dumps and local database files ----
