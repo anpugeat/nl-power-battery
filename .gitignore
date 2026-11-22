@@ -22,6 +22,11 @@ htmlcov/
 .ruff_cache/
 .ipynb_checkpoints/
 
+# --- Jupyter (local testing only; not a project dependency) ---
+*.ipynb
+.jupyter/
+.ipython/
+
 # --- Raw data: pulled from ENTSO-E and Open-Meteo, rebuilt by the ingest scripts ---
 /data/
 
