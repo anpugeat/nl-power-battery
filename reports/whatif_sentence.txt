@@ -1,0 +1,1 @@
+For a battery of 1 MW, the profit per year is most sensitive to duration: going from 1 to 4 hours of storage changes it by EUR +73,723. Going from the naive forecast to the gbm forecast adds EUR 7,012 a year (90% interval EUR 6,005 to 8,376), as much as 5.8 more points of efficiency.
