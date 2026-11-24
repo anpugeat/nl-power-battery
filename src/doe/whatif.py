@@ -1,4 +1,4 @@
-"""Step 8: the what-if experiment. Replay Step 7's game with other batteries, and see which assumptions move the money.
+"""the what-if experiment. Replay game situation with other batteries, and see which assumptions move the money.
 
 Run with:  python -m src.doe.whatif
 """
