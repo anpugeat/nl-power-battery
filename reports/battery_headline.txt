@@ -1,0 +1,1 @@
+Over 688 days from 2025-01-01 to 2026-11-19, the gbm forecast captured 93% of what a perfect forecast would have earned, which is EUR 5,165 a year more than the naive forecast, for a battery of 1 MW and 2 MWh.
