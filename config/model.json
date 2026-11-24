@@ -1,0 +1,12 @@
+{
+  "name": "trees600_leaves15_l1",
+  "settings": {
+    "n_estimators": 600,
+    "num_leaves": 15,
+    "objective": "l1"
+  },
+  "window": 364,
+  "chosen_on": "2024-09-01 to 2024-12-31",
+  "practice_days": 121,
+  "practice_mae": 17.478
+}
