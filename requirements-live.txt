@@ -1,0 +1,12 @@
+# What the scheduled job on GitHub installs: only the libraries the live forecast imports.
+# Every version matches requirements.txt. When one is upgraded there, change it here too.
+entsoe-py==1.0.0
+holidays==0.109
+lightgbm==4.7.0
+numpy==2.5.5
+pandas==3.1.1
+python-dotenv==1.2.4
+requests==2.34.2
+scikit-learn==1.9.1
+scipy==1.18.1
+SQLAlchemy==2.1.9

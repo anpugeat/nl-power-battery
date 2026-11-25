@@ -1,0 +1,49 @@
+name: daily-forecast
+
+on:
+  schedule:                          # four alarms before the auction closes at 12:00
+    - cron: "45 9 * * *"
+      timezone: "Europe/Amsterdam"
+    - cron: "15 10 * * *"
+      timezone: "Europe/Amsterdam"
+    - cron: "45 10 * * *"
+      timezone: "Europe/Amsterdam"
+    - cron: "15 11 * * *"
+      timezone: "Europe/Amsterdam"
+  workflow_dispatch:                 # adds a "Run workflow" button on the Actions page
+
+permissions:
+  contents: write                    # the job may commit to this repository, and nothing more
+
+concurrency:
+  group: daily-forecast              # never two runs at the same time
+  cancel-in-progress: false
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-live.txt
+      - run: pip install -r requirements-live.txt
+      - run: python -m src.live.daily
+        env:
+          ENTSOE_API_KEY: ${{ secrets.ENTSOE_API_KEY }}
+      - name: Commit what was written
+        if: always()                 # also after a failed morning, so a new score is not lost
+        run: |
+          git config user.name "daily-forecast"
+          git config user.email "daily-forecast@users.noreply.github.com"
+          git add live
+          if git diff --cached --quiet; then
+            echo "nothing new to commit"
+          else
+            git commit -m "live: written $(TZ=Europe/Amsterdam date '+%Y-%m-%d %H:%M') Amsterdam time"
+            git pull --rebase
+            git push
+          fi
